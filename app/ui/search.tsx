@@ -15,6 +15,8 @@ export default function Search({ placeholder }: { placeholder: string }) {
     console.log(`Searching... ${term}`)
 
     const params = new URLSearchParams(searchParams) // to get the params string like '?page=1&query=a'
+    params.set('page', '1') //  when user types new search query -> reset the page number to 1
+
     if (term) {
       params.set('query', term) // set the query param
     } else {
